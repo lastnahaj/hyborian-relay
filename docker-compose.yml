@@ -1,0 +1,18 @@
+services:
+  hyborian-relay:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      CONAN_RCON_HOST: host.docker.internal
+      CONAN_LOG_PATH: /conan-logs/ConanSandbox.log
+      DATABASE_PATH: /app/data/hyborian-relay.db
+      HEALTH_SERVER_HOST: 0.0.0.0
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./data:/app/data
+      - /srv/conan/ConanSandbox/Saved/Logs:/conan-logs:ro
+    ports:
+      - "127.0.0.1:8787:8787"

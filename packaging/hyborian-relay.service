@@ -1,0 +1,26 @@
+[Unit]
+Description=Hyborian Relay for Conan Exiles
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=hyborianrelay
+Group=hyborianrelay
+WorkingDirectory=/opt/hyborian-relay
+EnvironmentFile=/opt/hyborian-relay/.env
+ExecStart=/usr/bin/node /opt/hyborian-relay/dist/main.js
+Restart=always
+RestartSec=5
+TimeoutStopSec=20
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+RestrictSUIDSGID=true
+UMask=0077
+ReadWritePaths=/opt/hyborian-relay/data
+
+[Install]
+WantedBy=multi-user.target
