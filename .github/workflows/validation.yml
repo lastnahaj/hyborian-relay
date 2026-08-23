@@ -1,0 +1,232 @@
+name: Validate Hyborian Relay
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  determine-changed-areas:
+    name: Determine changed areas
+    runs-on: ubuntu-latest
+    outputs:
+      categories: ${{ steps.categories.outputs.value }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Select validation groups
+        id: categories
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            git diff --name-only "${{ github.event.pull_request.base.sha }}...${{ github.event.pull_request.head.sha }}" > changed-paths.txt
+            categories="$(node scripts/select-github-validation.mjs < changed-paths.txt)"
+          else
+            categories='["full"]'
+          fi
+          echo "value=${categories}" >> "${GITHUB_OUTPUT}"
+
+  public-source:
+    name: Validate formatting and public source
+    needs: determine-changed-areas
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run format:check
+      - run: npm run public-source-check
+
+  validate-typescript:
+    name: Validate TypeScript
+    needs: determine-changed-areas
+    if:
+      contains(needs.determine-changed-areas.outputs.categories, 'typescript-source') &&
+      !contains(needs.determine-changed-areas.outputs.categories, 'full')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run dead-code
+      - run: npm run build
+
+  test-rcon:
+    name: Test RCON
+    needs: determine-changed-areas
+    if:
+      contains(needs.determine-changed-areas.outputs.categories, 'rcon') &&
+      !contains(needs.determine-changed-areas.outputs.categories, 'full')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run test:rcon
+      - run: npm run test:integration
+
+  test-chat-relay:
+    name: Test chat relay
+    needs: determine-changed-areas
+    if:
+      contains(needs.determine-changed-areas.outputs.categories, 'chat') &&
+      !contains(needs.determine-changed-areas.outputs.categories, 'full')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run test:chat
+
+  test-death-tracking:
+    name: Test death tracking
+    needs: determine-changed-areas
+    if:
+      contains(needs.determine-changed-areas.outputs.categories, 'death-tracking') &&
+      !contains(needs.determine-changed-areas.outputs.categories, 'full')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run test:deaths
+      - run: npm run test:storage
+
+  test-player-tracking:
+    name: Test player tracking
+    needs: determine-changed-areas
+    if:
+      contains(needs.determine-changed-areas.outputs.categories, 'player-tracking') &&
+      !contains(needs.determine-changed-areas.outputs.categories, 'full')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run test:tracking
+
+  test-storage:
+    name: Test storage
+    needs: determine-changed-areas
+    if:
+      contains(needs.determine-changed-areas.outputs.categories, 'storage') &&
+      !contains(needs.determine-changed-areas.outputs.categories, 'full')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run test:storage
+
+  test-discord:
+    name: Test Discord
+    needs: determine-changed-areas
+    if:
+      contains(needs.determine-changed-areas.outputs.categories, 'discord') &&
+      !contains(needs.determine-changed-areas.outputs.categories, 'full')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run test:discord
+
+  test-configuration:
+    name: Test configuration
+    needs: determine-changed-areas
+    if:
+      contains(needs.determine-changed-areas.outputs.categories, 'configuration') &&
+      !contains(needs.determine-changed-areas.outputs.categories, 'full')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run test:configuration
+
+  validate-linux-packaging:
+    name: Validate Linux packaging
+    needs: determine-changed-areas
+    if:
+      github.ref == 'refs/heads/main' || contains(needs.determine-changed-areas.outputs.categories,
+      'linux-packaging') || contains(needs.determine-changed-areas.outputs.categories, 'full')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Validate shell scripts
+        run: |
+          shellcheck scripts/*.sh
+          bash -n scripts/install-systemd.sh
+          bash -n scripts/uninstall-systemd.sh
+          bash -n scripts/validate-installation.sh
+      - name: Verify systemd unit
+        run: |
+          sudo useradd --system --home-dir /opt/hyborian-relay --shell /usr/sbin/nologin hyborianrelay
+          systemd-analyze verify packaging/hyborian-relay.service
+
+  build-container-image:
+    name: Build container image
+    needs: determine-changed-areas
+    if:
+      github.ref == 'refs/heads/main' || contains(needs.determine-changed-areas.outputs.categories,
+      'docker') || contains(needs.determine-changed-areas.outputs.categories, 'full')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: docker build .
+      - name: Validate Docker Compose
+        run: |
+          cp .env.example .env
+          docker compose config
+
+  full-release-validation:
+    name: Full release validation
+    needs: determine-changed-areas
+    if:
+      github.ref == 'refs/heads/main' || contains(needs.determine-changed-areas.outputs.categories,
+      'full')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm run test:coverage
+      - run: npm audit --audit-level=high
