@@ -10,7 +10,7 @@ data/*
 !data/.gitkeep
 
 coverage/
-logs/
+/logs/
 *.log
 
 .DS_Store
