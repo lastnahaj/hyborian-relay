@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.env
+
+*.db
+*.db-shm
+*.db-wal
+
+data/*
+!data/.gitkeep
+
+coverage/
+logs/
+*.log
+
+.DS_Store
+*.tsbuildinfo

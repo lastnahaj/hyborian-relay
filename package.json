@@ -1,0 +1,56 @@
+{
+  "name": "hyborian-relay",
+  "version": "0.1.0-development",
+  "description": "Linux bridge for Conan Exiles Enhanced that relays Discord and in-game chat and tracks players, sessions, server health, and deaths.",
+  "type": "module",
+  "private": false,
+  "engines": {
+    "node": ">=22 <23"
+  },
+  "scripts": {
+    "dev": "tsx src/main.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/main.js",
+    "doctor": "node dist/doctor.js",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:rcon": "vitest run tests/rcon",
+    "test:chat": "vitest run tests/chat tests/game-events tests/integration/chatRelay.test.ts",
+    "test:tracking": "vitest run tests/tracking",
+    "test:deaths": "vitest run tests/deaths tests/game-events/parseDeathEvent.test.ts",
+    "test:storage": "vitest run tests/storage",
+    "test:discord": "vitest run tests/discord",
+    "test:configuration": "vitest run tests/configuration",
+    "test:integration": "vitest run tests/integration",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.test.json",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "dead-code": "knip",
+    "duplicate-code": "jscpd --config jscpd.json",
+    "public-source-check": "node scripts/verify-public-source.mjs",
+    "source-audit": "npm run format:check && npm run lint && npm run typecheck && npm run dead-code && npm run duplicate-code && npm run public-source-check",
+    "check": "npm run source-audit && npm test && npm run build"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "discord.js": "^14.27.0",
+    "dotenv": "^17.4.2",
+    "pino": "^10.3.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^22.20.1",
+    "@vitest/coverage-v8": "^4.1.11",
+    "eslint": "^10.0.1",
+    "jscpd": "^5.0.16",
+    "knip": "^6.32.2",
+    "prettier": "^3.9.6",
+    "tsx": "^4.23.12",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.67.0",
+    "vitest": "^4.1.11"
+  }
+}
