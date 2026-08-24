@@ -12,6 +12,7 @@ data/*
 coverage/
 /logs/
 *.log
+!/tests/fixtures/*.log
 
 .DS_Store
 *.tsbuildinfo

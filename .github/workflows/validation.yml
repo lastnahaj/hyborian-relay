@@ -196,6 +196,7 @@ jobs:
       - name: Verify systemd unit
         run: |
           sudo useradd --system --home-dir /opt/hyborian-relay --shell /usr/sbin/nologin hyborianrelay
+          test -x /usr/bin/node || sudo ln -s "$(command -v node)" /usr/bin/node
           systemd-analyze verify packaging/hyborian-relay.service
 
   build-container-image:

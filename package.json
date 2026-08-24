@@ -1,6 +1,6 @@
 {
   "name": "hyborian-relay",
-  "version": "0.1.0-development",
+  "version": "1.0.0",
   "description": "Linux bridge for Conan Exiles Enhanced that relays Discord and in-game chat and tracks players, sessions, server health, and deaths.",
   "type": "module",
   "private": false,
