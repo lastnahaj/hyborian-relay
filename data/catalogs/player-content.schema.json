@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/player-content.schema.json",
+  "title": "Verified player content entry",
+  "type": "object",
+  "required": [
+    "name",
+    "source_mod",
+    "category",
+    "obtainable",
+    "verification_status",
+    "source_urls"
+  ],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "source_mod": { "type": "string", "minLength": 1 },
+    "category": {
+      "enum": ["item", "boss", "creature", "spell", "pet", "mount", "quest"]
+    },
+    "subcategory": { "type": "string" },
+    "obtainable": { "type": "boolean" },
+    "obtained_from": { "type": "string" },
+    "crafting_station": { "type": "string" },
+    "requirements": { "type": "string" },
+    "player_effect": { "type": "string" },
+    "pvp_notes": { "type": "string" },
+    "server_restrictions": { "type": "string" },
+    "image": { "type": ["string", "null"] },
+    "image_source": { "type": ["string", "null"], "format": "uri" },
+    "verified_at": { "type": ["string", "null"], "format": "date" },
+    "verification_status": {
+      "enum": ["verified", "server-verification-required", "draft"]
+    },
+    "source_urls": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" }
+    }
+  },
+  "additionalProperties": false
+}

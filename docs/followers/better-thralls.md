@@ -1,0 +1,34 @@
+---
+title: Better Thralls
+description: Player-facing overview of Better Thralls follower-management capabilities.
+verification: server-verification-required
+---
+
+# Better Thralls
+
+**Source mod:** Better Thralls v3.3.0 (Enhanced) (`3720904511`)
+
+Better Thralls expands follower management. Its public documentation covers capabilities such as:
+
+- Picking up eligible followers and pets
+- Additional active follower slots when enabled
+- Warcry group commands and follower teams
+- Lamplighter followers
+- Base-defense experience behavior
+- Follower healing
+- Home and return-home behavior
+- Expanded follower statistics
+
+## Warcry controls
+
+The published default key for the Warcry menu is **T**. A player-specific key binding may differ.
+
+## Server-specific behavior
+
+Additional follower count and several listed systems are configurable. This page does not claim
+which optional features are enabled or what their values are until the live server is checked.
+
+## Sources
+
+- [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3720904511)
+- [Author Q&A](https://testerle.net/better-thralls-qa/)

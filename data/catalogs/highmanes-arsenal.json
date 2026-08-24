@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "source_mod": "Highmane's Arsenal: Enhanced",
+  "workshop_id": "3721926604",
+  "verification_status": "server-verification-required",
+  "source_urls": ["https://steamcommunity.com/sharedfiles/filedetails/?id=3721926604"],
+  "categories": [
+    { "slug": "weapons", "label": "Weapons", "entries": [] },
+    { "slug": "armor", "label": "Armor", "entries": [] },
+    { "slug": "accessories", "label": "Accessories", "entries": [] },
+    { "slug": "infused-accessories", "label": "Infused accessories", "entries": [] },
+    { "slug": "consumables", "label": "Consumables", "entries": [] },
+    { "slug": "crafting-benches", "label": "Crafting benches", "entries": [] },
+    { "slug": "building-decor", "label": "Building and decor", "entries": [] },
+    { "slug": "pets-mounts", "label": "Pets and mounts", "entries": [] }
+  ]
+}

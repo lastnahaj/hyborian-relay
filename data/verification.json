@@ -1,0 +1,302 @@
+{
+  "schema_version": 1,
+  "pages": {
+    "/": {
+      "status": "verified",
+      "verified_at": "2026-08-24",
+      "source_urls": [],
+      "notes": "The 5x rates and full-PvP identity were supplied by the server owner."
+    },
+    "/getting-started/": {
+      "status": "verified",
+      "verified_at": "2026-08-24",
+      "source_urls": [],
+      "notes": "Navigation and owner-supplied server identity only."
+    },
+    "/getting-started/server-overview": {
+      "status": "verified",
+      "verified_at": "2026-08-24",
+      "source_urls": [],
+      "notes": "The 5x rates and full-PvP identity were supplied by the server owner."
+    },
+    "/getting-started/required-mods": {
+      "status": "verified",
+      "verified_at": "2026-08-24",
+      "source_urls": ["https://steamcommunity.com/workshop/"],
+      "notes": "Canonical names and individual source URLs are maintained in data/mods.json."
+    },
+    "/server-rules/": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": [],
+      "notes": "Only the full-PvP identity has been supplied; a full ruleset is pending."
+    },
+    "/progression/": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": [
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3719965485",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3720326124",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3718199031"
+      ],
+      "notes": "Combined live progression is pending verification."
+    },
+    "/progression/wings-of-valhalla": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": [
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3719965485",
+        "https://wings-of-valhalla.com/",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3721036709"
+      ],
+      "notes": "Source-documented capabilities are separated from server availability."
+    },
+    "/progression/eaa-perks-level": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": ["https://steamcommunity.com/sharedfiles/filedetails/?id=3720326124"],
+      "notes": "Effective values are withheld pending combined live verification."
+    },
+    "/progression/armory-and-arsenal": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": ["https://steamcommunity.com/sharedfiles/filedetails/?id=3718199031"],
+      "notes": "Exact availability, acquisition, and values need live verification."
+    },
+    "/combat/": {
+      "status": "verified",
+      "verified_at": "2026-08-24",
+      "source_urls": [
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3721926604",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3718199031",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3719965485",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3721151274",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3724192567"
+      ],
+      "notes": "System roles only; item-level server claims are not present."
+    },
+    "/combat/highmanes-arsenal": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": ["https://steamcommunity.com/sharedfiles/filedetails/?id=3721926604"],
+      "notes": "The catalog is empty until ordinary-player acquisition is verified."
+    },
+    "/combat/highmanes/equipment": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": ["https://steamcommunity.com/sharedfiles/filedetails/?id=3721926604"],
+      "notes": "No item entries are published."
+    },
+    "/combat/highmanes/accessories": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": ["https://steamcommunity.com/sharedfiles/filedetails/?id=3721926604"],
+      "notes": "No item entries are published."
+    },
+    "/combat/highmanes/crafting-building": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": ["https://steamcommunity.com/sharedfiles/filedetails/?id=3721926604"],
+      "notes": "No item entries are published."
+    },
+    "/combat/highmanes/companions": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": ["https://steamcommunity.com/sharedfiles/filedetails/?id=3721926604"],
+      "notes": "No companion entries are published."
+    },
+    "/combat/exiles-extreme": {
+      "status": "verified",
+      "verified_at": "2026-08-24",
+      "source_urls": [
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3721151274",
+        "https://exee.site/",
+        "https://exee.site/listofitems/"
+      ],
+      "notes": "Only public player-content categories and first-party references are published."
+    },
+    "/magic/": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": ["https://steamcommunity.com/sharedfiles/filedetails/?id=3724192567"],
+      "notes": "Spell availability and tuning need live verification."
+    },
+    "/magic/domain-magic": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": [
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3724192567",
+        "https://docs.google.com/document/d/1V55KOwctM_VPTZH7rmVC_n4r_X2sjLlpHI8zAhCiQSQ/edit?usp=sharing"
+      ],
+      "notes": "Exact spell availability and tuning need live verification."
+    },
+    "/followers/": {
+      "status": "verified",
+      "verified_at": "2026-08-24",
+      "source_urls": [
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3720904511",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3720737911",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3720753923"
+      ],
+      "notes": "Section index only."
+    },
+    "/followers/better-thralls": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": [
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3720904511",
+        "https://testerle.net/better-thralls-qa/"
+      ],
+      "notes": "Optional features and values need live verification."
+    },
+    "/followers/extended-thrall-stats": {
+      "status": "verified",
+      "verified_at": "2026-08-24",
+      "source_urls": ["https://steamcommunity.com/sharedfiles/filedetails/?id=3720737911"],
+      "notes": "Player interface fields are documented by the Enhanced Workshop page."
+    },
+    "/followers/follower-collision": {
+      "status": "verified",
+      "verified_at": "2026-08-24",
+      "source_urls": ["https://steamcommunity.com/sharedfiles/filedetails/?id=3720753923"],
+      "notes": "Core player behavior is documented by the Enhanced Workshop page."
+    },
+    "/crafting/": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": [
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3721926604",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3719965485",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3718199031",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3720948133"
+      ],
+      "notes": "No server-specific recipe or resource entry is published."
+    },
+    "/building/": {
+      "status": "verified",
+      "verified_at": "2026-08-24",
+      "source_urls": [
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3720948133",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3755091710"
+      ],
+      "notes": "Section index only."
+    },
+    "/building/unlock-plus": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": [
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3720948133",
+        "https://testerle.net/unlock-plus-qa/"
+      ],
+      "notes": "Enhanced feature availability needs live verification."
+    },
+    "/building/lbpr": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": ["https://steamcommunity.com/sharedfiles/filedetails/?id=3755091710"],
+      "notes": "Effective placement behavior needs live verification."
+    },
+    "/travel/": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": [
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3718830483",
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3719965485"
+      ],
+      "notes": "No server-specific route or destination is published."
+    },
+    "/travel/mystical-travel-shelf": {
+      "status": "verified",
+      "verified_at": "2026-08-24",
+      "source_urls": ["https://steamcommunity.com/sharedfiles/filedetails/?id=3718830483"],
+      "notes": "Core player behavior is documented by the Workshop page."
+    },
+    "/quests/": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": [],
+      "notes": "No server-specific quest or world-content entry is published."
+    },
+    "/economy/": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": [],
+      "notes": "No server-specific economy entry is published."
+    },
+    "/qol/": {
+      "status": "verified",
+      "verified_at": "2026-08-24",
+      "source_urls": [],
+      "notes": "Section index; individual pages carry their first-party sources."
+    },
+    "/qol/simple-minimap": {
+      "status": "verified",
+      "verified_at": "2026-08-24",
+      "source_urls": ["https://steamcommunity.com/sharedfiles/filedetails/?id=3719513784"],
+      "notes": "Player controls are documented by the Workshop page."
+    },
+    "/qol/damage-meter": {
+      "status": "verified",
+      "verified_at": "2026-08-24",
+      "source_urls": ["https://steamcommunity.com/sharedfiles/filedetails/?id=3719585133"],
+      "notes": "Player controls and tracked fields are documented by the Workshop page."
+    },
+    "/qol/proximity-party": {
+      "status": "verified",
+      "verified_at": "2026-08-24",
+      "source_urls": ["https://steamcommunity.com/sharedfiles/filedetails/?id=3718878457"],
+      "notes": "Player controls are documented by the Workshop page."
+    },
+    "/qol/fashionist": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": [
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3720921242",
+        "https://testerle.net/fashionist-qa/"
+      ],
+      "notes": "Effective PvP appearance restrictions need live verification."
+    },
+    "/qol/stacksize-plus": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": ["https://steamcommunity.com/sharedfiles/filedetails/?id=3720915336"],
+      "notes": "Effective stack values need live verification."
+    },
+    "/qol/simple-modlist": {
+      "status": "verified",
+      "verified_at": "2026-08-24",
+      "source_urls": ["https://steamcommunity.com/sharedfiles/filedetails/?id=3719546290"],
+      "notes": "Player interface behavior is documented by the Workshop page."
+    },
+    "/creatures/": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": [],
+      "notes": "No server-specific creature or encounter entry is published."
+    },
+    "/reference/": {
+      "status": "verified",
+      "verified_at": "2026-08-24",
+      "source_urls": [],
+      "notes": "Reference index only."
+    },
+    "/reference/mod-directory": {
+      "status": "verified",
+      "verified_at": "2026-08-24",
+      "source_urls": ["https://steamcommunity.com/workshop/"],
+      "notes": "Canonical names and individual URLs are maintained in data/mods.json."
+    },
+    "/reference/verification": {
+      "status": "verified",
+      "verified_at": "2026-08-24",
+      "source_urls": [],
+      "notes": "Project publication standard."
+    },
+    "/reference/player-facing-server-systems": {
+      "status": "server-verification-required",
+      "verified_at": "2026-08-24",
+      "source_urls": ["https://steamcommunity.com/sharedfiles/filedetails/?id=3725018456"],
+      "notes": "No server-specific player feature is published."
+    }
+  }
+}

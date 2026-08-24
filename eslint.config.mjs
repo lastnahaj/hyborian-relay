@@ -2,7 +2,15 @@ import eslint from "@eslint/js";
 import typescriptEslint from "typescript-eslint";
 
 export default typescriptEslint.config(
-  { ignores: ["coverage/**", "dist/**", "node_modules/**"] },
+  {
+    ignores: [
+      ".vitepress/cache/**",
+      ".vitepress/dist/**",
+      "coverage/**",
+      "dist/**",
+      "node_modules/**",
+    ],
+  },
   eslint.configs.recommended,
   ...typescriptEslint.configs.recommendedTypeChecked,
   {
@@ -33,7 +41,7 @@ export default typescriptEslint.config(
     },
   },
   {
-    files: ["**/*.mjs"],
+    files: ["**/*.{js,mjs}"],
     ...typescriptEslint.configs.disableTypeChecked,
     languageOptions: {
       parserOptions: { project: false },
