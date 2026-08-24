@@ -27,56 +27,6 @@ formats against the community's live server before relying on event publication.
 Hyborian Relay does not provide arbitrary RCON, kick, ban, restart, economy, rank, role, account
 linking, clan administration, or a web administration panel.
 
-## Player wiki
-
-The repository also contains a VitePress player wiki for the associated 5x rates, full-PvP Conan
-Exiles Enhanced server. It is intentionally separate from the relay's operator documentation:
-`docs/` contains only ordinary-player guidance, while structured source and verification records
-live in `data/`.
-
-### Local development
-
-Install the existing Node.js 22 dependencies, then start the wiki:
-
-```bash
-npm ci
-npm run wiki:dev
-```
-
-Use `npm run wiki:verify` to check source coverage, verification states, internal links, canonical
-Workshop identities, and image provenance. `npm run wiki:build` runs that verification and creates
-the production site in `.vitepress/dist/`; `npm run wiki:preview` serves the finished build.
-
-### Updating player content
-
-1. Add or edit the player-facing Markdown in `docs/`.
-2. Update the page's entry in `data/verification.json`. Use `verified` only for sourced claims;
-   choose `server-verification-required` for documented mod capabilities whose effective server
-   behavior is still unknown. Draft facts do not belong in published Markdown.
-3. Add reusable item, boss, creature, spell, pet, mount, or quest records under `data/catalogs/`
-   using `player-content.schema.json`. Every verified factual entry needs at least one source URL
-   and must be obtainable by ordinary players.
-4. Run `npm run wiki:build` and correct every failure before publishing.
-
-Canonical Workshop names and IDs are maintained in `data/mods.json`. Do not use local package
-filenames as display names, and keep earlier Legacy documentation separate from current Enhanced
-evidence.
-
-### Image attribution
-
-The wiki uses a text-only layout until an image from an exact Enhanced Workshop page, an official
-mod site or guide, or a server-owner screenshot is available. Before adding a file under
-`public/media/`, add a matching `data/image-sources.json` record with its local path, source page,
-direct asset URL, Workshop ID and canonical name when applicable, credit, verification date, and
-factual alt text. The verification script rejects unregistered image files.
-
-### GitHub Pages deployment
-
-`.github/workflows/deploy-wiki.yml` builds and publishes the VitePress output when wiki source or
-data changes on `main`, and it can also be run manually. Configure the repository's Pages source as
-**GitHub Actions**. Project-site paths are derived from `GITHUB_REPOSITORY` during the build, so the
-output works under the repository's Pages subpath.
-
 ## Architecture
 
 ```text

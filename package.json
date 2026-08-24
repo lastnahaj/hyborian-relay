@@ -10,10 +10,6 @@
   "scripts": {
     "dev": "tsx src/main.ts",
     "build": "tsc -p tsconfig.json",
-    "wiki:dev": "vitepress dev .",
-    "wiki:build": "node scripts/verify-wiki.mjs && vitepress build .",
-    "wiki:preview": "vitepress preview .",
-    "wiki:verify": "node scripts/verify-wiki.mjs",
     "start": "node dist/main.js",
     "doctor": "node dist/doctor.js",
     "test": "vitest run",
@@ -33,7 +29,7 @@
     "dead-code": "knip",
     "duplicate-code": "jscpd --config jscpd.json",
     "public-source-check": "node scripts/verify-public-source.mjs",
-    "source-audit": "npm run format:check && npm run lint && npm run typecheck && npm run dead-code && npm run duplicate-code && npm run public-source-check && npm run wiki:verify",
+    "source-audit": "npm run format:check && npm run lint && npm run typecheck && npm run dead-code && npm run duplicate-code && npm run public-source-check",
     "check": "npm run source-audit && npm test && npm run build"
   },
   "dependencies": {
@@ -42,11 +38,6 @@
     "dotenv": "^17.4.2",
     "pino": "^10.3.1",
     "zod": "^4.4.3"
-  },
-  "overrides": {
-    "vitepress": {
-      "vite": "6.4.3"
-    }
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -60,7 +51,6 @@
     "tsx": "^4.23.12",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.67.0",
-    "vitepress": "^1.6.4",
     "vitest": "^4.1.11"
   }
 }

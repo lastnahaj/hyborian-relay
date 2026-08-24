@@ -44,7 +44,6 @@ jobs:
       - run: npm ci
       - run: npm run format:check
       - run: npm run public-source-check
-      - run: npm run wiki:build
 
   validate-typescript:
     name: Validate TypeScript
