@@ -5,7 +5,10 @@ chat between Discord and Conan, tracks current players and play sessions, record
 events, publishes server activity, and exposes operational health without turning Discord into a
 general-purpose administration console.
 
-Current version: **1.0.0**
+Current version: **1.0.0 (Beta)**
+
+Release status: **Beta**. Run the diagnostics and verify the documented Pippi chat and death-event
+formats against the community's live server before relying on event publication.
 
 ## Features
 
@@ -616,6 +619,6 @@ unless a backup exists.
 
 ## Project status and affiliation
 
-Hyborian Relay 1.0.0 is the first public release. It is an independent community project and is not
-an official product of, affiliated with, or endorsed by Funcom, Discord, or Enhanced Pippi's
+Hyborian Relay 1.0.0 is the first public beta release. It is an independent community project and is
+not an official product of, affiliated with, or endorsed by Funcom, Discord, or Enhanced Pippi's
 maintainers. Product and service names belong to their respective owners.
