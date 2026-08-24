@@ -82,7 +82,9 @@
       "workshop_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3720921242",
       "source_urls": [
         "https://steamcommunity.com/sharedfiles/filedetails/?id=3720921242",
-        "https://testerle.net/fashionist-qa/"
+        "https://testerle.net/fashionist-qa/",
+        "https://testerle.net/fashionist-configuration/",
+        "https://testerle.net/"
       ],
       "verification_status": "server-verification-required"
     },
@@ -134,7 +136,10 @@
       "source_urls": [
         "https://steamcommunity.com/sharedfiles/filedetails/?id=3721151274",
         "https://exee.site/",
-        "https://exee.site/listofitems/"
+        "https://exee.site/listofitems/",
+        "https://exee.site/armor/",
+        "https://exee.site/accessories/",
+        "https://exee.site/placeables/"
       ],
       "verification_status": "verified"
     },
@@ -173,7 +178,8 @@
       "workshop_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3719965485",
       "source_urls": [
         "https://steamcommunity.com/sharedfiles/filedetails/?id=3719965485",
-        "https://wings-of-valhalla.com/"
+        "https://wings-of-valhalla.com/",
+        "https://docs.google.com/spreadsheets/d/1dvqwQ7ar5BcZGWfdgrbsOomqIjHo-60d1fAXEFloe2k/edit#gid=0"
       ],
       "verification_status": "server-verification-required"
     },
@@ -183,7 +189,11 @@
       "role": "Wings Of Valhalla equipment dependency",
       "page": "/progression/wings-of-valhalla",
       "workshop_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3721036709",
-      "source_urls": ["https://steamcommunity.com/sharedfiles/filedetails/?id=3721036709"],
+      "source_urls": [
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=3721036709",
+        "https://wings-of-valhalla.com/",
+        "https://docs.google.com/spreadsheets/d/1dvqwQ7ar5BcZGWfdgrbsOomqIjHo-60d1fAXEFloe2k/edit#gid=0"
+      ],
       "verification_status": "verified"
     },
     {

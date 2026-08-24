@@ -11,20 +11,25 @@ verification: server-verification-required
 Fashionist expands cosmetic customization without requiring a character's visible style to match the
 appearance of equipped combat gear.
 
-## Documented player features
+## Confirmed in the current Enhanced source
 
-- Armor, weapon, and warpaint styling
-- Warpaint color selection
-- Visible weapon and tool placement on the character
-- Armor stands for saved style sets
 - Thrall Outfitters Bench
-- Armor and saddle color options
+- A color picker for armor and saddles
 - Dyeable saddles
+- An interface with player settings
+- Integrated character editing
 
-PvP servers can restrict how armor appearance classes are restyled. The effective restriction on
-this server has not been supplied, so no permissive behavior is assumed.
+Older author-maintained configuration articles also document armor and weapon styling, attached
+weapon and tool placement, warpaint appearance, armor stands, and player visibility controls. Those
+articles predate the Enhanced release, so this wiki does not use them alone as proof that every
+feature behaves the same in Enhanced.
+
+PvP servers can restrict how armor appearance classes are restyled or whether worn armor can be
+hidden. The effective restrictions on this server have not been supplied, so no permissive behavior
+is assumed.
 
 ## Sources
 
 - [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3720921242)
 - [Author Q&A](https://testerle.net/fashionist-qa/)
+- [Author configuration guide](https://testerle.net/fashionist-configuration/)

@@ -7,6 +7,7 @@ const docsRoot = join(repositoryRoot, "docs");
 const publicRoot = join(repositoryRoot, "public");
 const mediaRoot = join(publicRoot, "media");
 const validStatuses = new Set(["verified", "server-verification-required", "draft"]);
+const validSourceStatuses = new Set(["checked", "author-linked"]);
 const imageExtensions = new Set([".avif", ".gif", ".jpeg", ".jpg", ".png", ".webp"]);
 const joined = (...fragments) => fragments.join("");
 const errors = [];
@@ -58,6 +59,7 @@ function resolvedMarkdownTarget(sourcePath, rawTarget) {
 
 const modsRegistry = readJson(join(repositoryRoot, "data", "mods.json"));
 const imageRegistry = readJson(join(repositoryRoot, "data", "image-sources.json"));
+const sourcesRegistry = readJson(join(repositoryRoot, "data", "sources.json"));
 const verificationRegistry = readJson(join(repositoryRoot, "data", "verification.json"));
 const catalog = readJson(join(repositoryRoot, "data", "catalogs", "highmanes-arsenal.json"));
 
@@ -85,6 +87,63 @@ if (modsRegistry) {
         errors.push(
           `Mod ${mod.workshop_id ?? "unknown"} does not link to its exact Workshop page.`,
         );
+      }
+    }
+  }
+}
+
+const registeredSourceUrls = new Set();
+if (!sourcesRegistry || !Array.isArray(sourcesRegistry.sources)) {
+  errors.push("data/sources.json must contain a sources array.");
+} else {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(sourcesRegistry.checked_at ?? "")) {
+    errors.push("data/sources.json has no valid audit date.");
+  }
+
+  const sourceKeys = new Set();
+  const knownModIds = new Set(modsRegistry?.mods?.map((mod) => mod.workshop_id) ?? []);
+
+  for (const source of sourcesRegistry.sources) {
+    if (!source.key || sourceKeys.has(source.key)) {
+      errors.push(`Source key ${source.key ?? "missing"} is missing or duplicated.`);
+    }
+    sourceKeys.add(source.key);
+
+    if (!source.url || registeredSourceUrls.has(source.url)) {
+      errors.push(`Source URL ${source.url ?? "missing"} is missing or duplicated.`);
+    }
+    registeredSourceUrls.add(source.url);
+
+    if (!validSourceStatuses.has(source.status)) {
+      errors.push(`Source ${source.key ?? "unknown"} has invalid status ${source.status}.`);
+    }
+    if (!source.kind || !source.edition_scope || !source.use) {
+      errors.push(`Source ${source.key ?? "unknown"} lacks role or edition metadata.`);
+    }
+    if (!Array.isArray(source.mod_ids) || source.mod_ids.length === 0) {
+      errors.push(`Source ${source.key ?? "unknown"} has no associated mod ID.`);
+    }
+    for (const modId of source.mod_ids ?? []) {
+      if (!knownModIds.has(modId)) {
+        errors.push(`Source ${source.key ?? "unknown"} references unknown mod ID ${modId}.`);
+      }
+    }
+  }
+
+  for (const mod of modsRegistry?.mods ?? []) {
+    const workshopSource = sourcesRegistry.sources.find(
+      (source) => source.url === mod.workshop_url && source.kind === "steam-workshop",
+    );
+    if (
+      !workshopSource ||
+      workshopSource.status !== "checked" ||
+      workshopSource.edition_scope !== "enhanced"
+    ) {
+      errors.push(`Mod ${mod.workshop_id} lacks a checked Enhanced Workshop source record.`);
+    }
+    for (const sourceUrl of mod.source_urls ?? []) {
+      if (!registeredSourceUrls.has(sourceUrl)) {
+        errors.push(`Mod ${mod.workshop_id} uses unregistered source ${sourceUrl}.`);
       }
     }
   }
@@ -229,6 +288,14 @@ if (!Array.isArray(localImages)) {
   }
 }
 
+for (const approvedSource of imageRegistry?.approved_source_pages ?? []) {
+  for (const sourcePage of approvedSource.source_pages ?? []) {
+    if (!registeredSourceUrls.has(sourcePage)) {
+      errors.push(`Approved image source ${sourcePage} is missing from data/sources.json.`);
+    }
+  }
+}
+
 for (const warning of warnings) console.warn(`wiki verification warning: ${warning}`);
 
 if (errors.length > 0) {
@@ -236,6 +303,6 @@ if (errors.length > 0) {
   process.exitCode = 1;
 } else {
   console.log(
-    `Wiki verification passed: ${markdownFiles.length} pages, ${modsRegistry?.mods?.length ?? 0} mods, ${localImages?.length ?? 0} local images.`,
+    `Wiki verification passed: ${markdownFiles.length} pages, ${modsRegistry?.mods?.length ?? 0} mods, ${sourcesRegistry?.sources?.length ?? 0} sources, ${localImages?.length ?? 0} local images.`,
   );
 }

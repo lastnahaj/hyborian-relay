@@ -16,7 +16,9 @@ reference.
 
 This wiki covers only content documented and verified as available to ordinary players on this
 server. Item entries will link back to the official catalog and include server-specific acquisition
-details only after confirmation.
+details only after confirmation. The official site currently provides searchable pages for a full
+item list, light/medium/heavy armor, accessories, and placeables. Catalog categories that are not
+appropriate for a general player guide are not mirrored here.
 
 ## Official references
 

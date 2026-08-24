@@ -16,6 +16,8 @@ The expanded follower and pet stats panel includes:
 - Health per Vitality point
 - Original follower name
 
-The interface also includes a language toggle between localized text and English.
+The mod injects the extra fields into the normal follower panel rather than replacing it, which its
+author documents as a compatibility feature. The interface also includes a language toggle between
+localized text and English. A short delay before the additional fields appear can be normal.
 
 [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3720737911)

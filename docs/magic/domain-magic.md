@@ -10,7 +10,9 @@ verification: server-verification-required
 
 Domain's Magic provides a dedicated high-fantasy casting system. Its public documentation describes
 elemental schools, cast times, movement penalties, interruptible casting, damage scaling, traps and
-status effects, ultimate-style abilities, and player aura visuals.
+status effects, ultimate-style abilities, and player aura visuals. The current Workshop description
+also identifies Blood Magic as released, but individual spells are not treated as server-available
+until observed here.
 
 ## Combat considerations
 
@@ -20,8 +22,9 @@ server-dependent and are not published here without live confirmation.
 
 ## Player settings
 
-The mod documents player control over personal casting-aura visuals. The exact in-server control
-will be added after it is confirmed in the current Enhanced build and server setup.
+Open the player menu from the in-game console with `datacmd ddmagicplayer` to toggle personal
+casting-aura visuals. This is the ordinary-player control documented by the current Enhanced page;
+it does not change server tuning.
 
 ## Sources
 

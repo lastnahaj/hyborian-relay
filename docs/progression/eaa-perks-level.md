@@ -12,6 +12,10 @@ EAA changes the base level, attribute, and perk model. Wings Of Valhalla also pr
 level functionality, so values documented for EAA alone cannot be treated as the final server
 behavior.
 
+The Workshop source documents a standalone design with extended character levels, additional
+attribute points, higher attribute investment, and new late-attribute perk choices. Those are mod
+design facts, not a statement of the combined server result.
+
 ## What is intentionally not published yet
 
 - Final character level cap

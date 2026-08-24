@@ -21,7 +21,22 @@ Better Thralls expands follower management. Its public documentation covers capa
 
 ## Warcry controls
 
-The published default key for the Warcry menu is **T**. A player-specific key binding may differ.
+The published default key for the Warcry menu is **T**. The current Enhanced page documents **Follow
+All**, **Stop Follow**, and **Go Away** as the base group commands. Other choices can appear when
+optional systems are enabled. A player-specific key binding may differ.
+
+## Documented feature boundaries
+
+- Pickup applies only to eligible followers and pets. Inventory, companion status, ownership, and
+  content restrictions can prevent pickup.
+- Additional follower slots are configurable and can be tied to the War Party perk.
+- Follower teams, lamplighters, defense experience, healing, forced non-lethal combat, and home
+  return are separate optional systems.
+- The mod does not improve a follower's underlying stats.
+
+The author Q&A documents an inventory-side player settings button. Because that support article
+predates Enhanced, use the current in-game interface as the final guide to which controls are
+available.
 
 ## Server-specific behavior
 

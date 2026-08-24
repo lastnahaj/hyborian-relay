@@ -47,6 +47,7 @@
       "source_urls": [
         "https://steamcommunity.com/sharedfiles/filedetails/?id=3719965485",
         "https://wings-of-valhalla.com/",
+        "https://docs.google.com/spreadsheets/d/1dvqwQ7ar5BcZGWfdgrbsOomqIjHo-60d1fAXEFloe2k/edit#gid=0",
         "https://steamcommunity.com/sharedfiles/filedetails/?id=3721036709"
       ],
       "notes": "Source-documented capabilities are separated from server availability."
@@ -111,7 +112,10 @@
       "source_urls": [
         "https://steamcommunity.com/sharedfiles/filedetails/?id=3721151274",
         "https://exee.site/",
-        "https://exee.site/listofitems/"
+        "https://exee.site/listofitems/",
+        "https://exee.site/armor/",
+        "https://exee.site/accessories/",
+        "https://exee.site/placeables/"
       ],
       "notes": "Only public player-content categories and first-party references are published."
     },
@@ -252,7 +256,8 @@
       "verified_at": "2026-08-24",
       "source_urls": [
         "https://steamcommunity.com/sharedfiles/filedetails/?id=3720921242",
-        "https://testerle.net/fashionist-qa/"
+        "https://testerle.net/fashionist-qa/",
+        "https://testerle.net/fashionist-configuration/"
       ],
       "notes": "Effective PvP appearance restrictions need live verification."
     },
@@ -285,6 +290,17 @@
       "verified_at": "2026-08-24",
       "source_urls": ["https://steamcommunity.com/workshop/"],
       "notes": "Canonical names and individual URLs are maintained in data/mods.json."
+    },
+    "/reference/source-library": {
+      "status": "verified",
+      "verified_at": "2026-08-24",
+      "source_urls": [
+        "https://steamcommunity.com/workshop/",
+        "https://testerle.net/",
+        "https://exee.site/",
+        "https://wings-of-valhalla.com/"
+      ],
+      "notes": "All registered first-party sources were rechecked and classified by edition scope and role."
     },
     "/reference/verification": {
       "status": "verified",

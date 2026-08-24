@@ -10,6 +10,7 @@ data/*
 !data/.gitkeep
 !data/mods.json
 !data/image-sources.json
+!data/sources.json
 !data/verification.json
 !data/catalogs/
 !data/catalogs/*.json

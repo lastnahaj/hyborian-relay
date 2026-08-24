@@ -13,6 +13,20 @@ including hundreds of weapons, custom movesets and effects, armor and clothing, 
 consumables, decorations, building sets, crafting benches, crafting expansions, pets, mounts, and
 character customization.
 
+## Documented player systems
+
+- Recipes are split across multiple knowledge entries, allowing a server to withhold individual
+  content groups.
+- Most ordinary recipes are designed around base-game resources and scale by item rarity.
+- Four universal benches consolidate broad crafting categories.
+- Weapons include new movesets and effects; the author describes the default balance target as close
+  to the base maps.
+- The catalog also includes building sets, more than 500 decorations, armor, clothing, accessories,
+  consumables, hairstyles, beards, pets, mounts, and saddles.
+
+These are categories documented by the mod author. They do not prove that every knowledge entry,
+recipe, companion, or effect is enabled or obtainable on this server.
+
 ## Browse the player catalog
 
 | Catalog                                                           | Coverage                                                                   |

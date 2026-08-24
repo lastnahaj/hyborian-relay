@@ -15,13 +15,14 @@ players.
 
 - Damage and damage per second
 - Current and total damage dealt and received
-- Recent encounter history
-- Scrollable combat log
+- The last ten individual encounters plus a total since reset
+- A scrollable combat log holding the most recent 1,000 damage events
 - Floating damage numbers
 - Damage-type breakdowns
 - Client-side saved encounter data
 
-The interface can be moved and resized. Its published default interaction behavior uses **F1** to
-enable mouse interaction unless the player changes the binding.
+The interface can be moved, resized, scaled, minimized, or hidden. Its settings also cover bar
+colors, interface theme, timestamps, and floating-number behavior. The published default interaction
+behavior uses **F1** to enable mouse interaction unless the player changes the binding.
 
 [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3719585133)

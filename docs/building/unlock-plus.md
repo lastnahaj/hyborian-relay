@@ -12,12 +12,17 @@ The Enhanced Workshop documentation describes player resource-management tools i
 
 - Moving items into open storage
 - Pulling crafting materials from nearby storage and stations
-- Deposit and restock workflows
+- Deposit, distribution, keep, and restock workflows
+- Supplying materials for documented automated crafting-bench recipes
 - Improved movement controls while using the construction hammer
 
 The Enhanced version is still restoring some capabilities known from the earlier Legacy version.
 This page treats Enhanced documentation and live Enhanced behavior as authoritative and does not
 assume feature parity.
+
+The author Q&A documents a red inventory-side configuration button and the player command
+`DataCmd UnlockPlus Config`. That article predates the Enhanced release, so the current in-game
+interface takes precedence if the control has changed.
 
 ## Sources
 

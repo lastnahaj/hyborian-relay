@@ -12,7 +12,8 @@ Proximity Party displays health bars for nearby clan members and followers, prio
 over followers.
 
 Player settings include interface scale, detection range, enable or disable, and the number of
-health bars shown. Use **F1** for mouse interaction when moving the window with the published
-default controls.
+health bars shown, from 1 through 15. Open the player settings from the in-game console with
+`dc proxyparty`. Use **F1** for mouse interaction when moving the window with the published default
+controls.
 
 [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3718878457)

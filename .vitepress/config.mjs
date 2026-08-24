@@ -149,6 +149,7 @@ export default defineConfig({
         items: [
           { text: "Reference Home", link: "/reference/" },
           { text: "Mod Directory", link: "/reference/mod-directory" },
+          { text: "Source Library", link: "/reference/source-library" },
           { text: "Verification", link: "/reference/verification" },
         ],
       },

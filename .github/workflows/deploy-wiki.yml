@@ -10,6 +10,7 @@ on:
       - "data/catalogs/**"
       - "data/image-sources.json"
       - "data/mods.json"
+      - "data/sources.json"
       - "data/verification.json"
       - "docs/**"
       - "public/**"

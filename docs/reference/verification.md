@@ -26,3 +26,6 @@ server.
 
 The current site contains no locally stored editorial images. Approved first-party image source
 pages are tracked for future use.
+
+See the [source library](./source-library.md) for the audit date, first-party links, edition scope,
+and the role each source is allowed to play.

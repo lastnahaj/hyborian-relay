@@ -37,4 +37,5 @@ covers only the ordinary-player features built with it.
 ## Workshop collection links
 
 Each entry in the [mod directory](../reference/mod-directory.md) links to its exact Enhanced
-Workshop page. Never identify a mod by a local package filename.
+Workshop page. The [source library](../reference/source-library.md) records the latest full audit
+and supporting first-party documentation. Never identify a mod by a local package filename.

@@ -23,6 +23,10 @@ single equipment pack.
 | Encounters           | Endgame bosses, named followers, and merchants                      |
 | Advanced progression | Weapon-scaling conversion and ascension                             |
 
+The Workshop page documents an in-game guide inside the mod menu. Open that player menu from its
+inventory button or with **Shift+V**. Menu content is the best available player reference for the
+currently installed build, but it does not prove that every configurable feature is enabled here.
+
 ## What will be added after live verification
 
 Focused guides can cover class selection, class experience, skill trees, gear acquisition, gems,

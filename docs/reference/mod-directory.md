@@ -7,7 +7,8 @@ verification: verified
 # Mod Directory
 
 Use Workshop names and IDs as the canonical identities. Version text is retained when it is part of
-the verified Workshop title.
+the verified Workshop title. All exact pages below were rechecked on **August 24, 2026**; supporting
+author documentation is listed in the [source library](./source-library.md).
 
 | Workshop mod                                                                                                                  |           ID | Player-facing role                           |
 | ----------------------------------------------------------------------------------------------------------------------------- | -----------: | -------------------------------------------- |
