@@ -44,7 +44,7 @@
     "@types/better-sqlite3": "^9.6.0",
     "@types/node": "^22.20.1",
     "@vitest/coverage-v8": "^4.1.11",
-    "eslint": "^10.0.1",
+    "eslint": "^10.9.1",
     "jscpd": "^5.0.16",
     "knip": "^6.32.2",
     "prettier": "^3.9.6",
